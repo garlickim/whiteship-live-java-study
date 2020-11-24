@@ -112,7 +112,8 @@
 
 ### instanceof
 - 객체의 타입을 확인하는데 사용되는 연산자
-- 어떤 클래스 또는 인터페이스에 속해있는지 판별할 때 사용
+- 어떤 클래스, 서브 클래스 또는 인터페이스에 속해있는지 판별할 때 사용
+- null 유형의 객체와 비교하면 무조건 false를 리턴
 ~~~java
 class Kia {
 }
@@ -122,13 +123,72 @@ class Seltos extends Kia {
 Seltos seltos = new Seltos();
 if(seltos instanceof Kia) // true
     System.out.println("셀토스는 기아차");
+    
+Seltos seltos = null;    
+if(seltos instanceof Kia) // false
+    System.out.println("셀토스는 기아차");
 ~~~
 
 </br>
 
+
 ### assignment(=) operator
+- 변수의 값을 할당하는데 사용하는 연산자
+- 오른쪽의 값을 왼쪽 변수에 할당
+- 오른쪽의 값의 타입과 왼쪽 변수 타입은 같아야 함 (다르면 컴파일 에러)
+  |   연산자    |  	   설명     |
+  |---------------|--------------|
+  | =             | a = 10;  |
+  | +=            | a += b; // a = a + b; |
+  | -=            | a -= b; // a = a - b; |
+  | *=            | a *= b; // a = a * b; |
+  | /=            | a /= b; // a = a / b; |
+  | %=            | a %= b; // a = a % b; |
+
+~~~java
+int a = 10;
+int result = 5;
+
+result += a; // result = result + a;
+System.out.println(result); // 15
+
+// --
+
+String a = "";
+int result = 5;
+
+result += a; // compile error (int 타입의 결과를 String에 할당할 수 없으므로)
+~~~
+
+</br>
+
 
 ### 화살표(->) 연산자
+- java8 에서 등장한 람다를 지원하기 위해 등장한 연산자
+- 매개변수와 구현식 사이의 -> 연산자를 통해 표현됨
+- (파라미터) -> {BODY} 의 형태로 구현되며, 람다에 대한 자세한 내용은 15주차에서..
+- 메소드를 1개만 가진 인터페이스를 생성, 해당 인터페이스의 실 몸체 구현은 사용하는 곳에서 람다식으로 표현(아래의 예 참고)
+~~~java
+class Scratch {
+    public static void main(String[] args) {
+        // 아래의 3가지 Calculator는 모두 같다
+        Calculator calculator1 = (int a, int b) -> { return a + b; };
+        Calculator calculator2 = (int a, int b) -> a + b;
+        Calculator calculator3 = (a, b) -> a + b;
+
+        System.out.println(calculator1.sum(1, 2)); // 3
+        System.out.println(calculator2.sum(1, 2)); // 3
+        System.out.println(calculator3.sum(1, 2)); // 3
+    }
+}
+
+interface Calculator {
+    public int sum(int number1, int number2);
+}
+~~~
+
+</br>
+
 
 ### 3항 연산자
 
