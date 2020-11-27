@@ -249,4 +249,25 @@ int age = "garlic".equals(name) ? 29 : 30;
 </br>
 
 ### (optional) Java 13. switch 연산자
-- 
+- switch 문에 표현식을 추가
+- 기존 case: 뿐만 아니라  case -> 의 문법이 추가 됨
+- case: 을 사용하는 경우 yield 키워드를 사용하여 값을 산출
+~~~java
+// case -> 구문
+String name = "garlic";
+switch (name) {
+    case "garlic" -> System.out.println("name is garlic");
+    case "onion " -> System.out.println("name is not garlic");
+    default -> System.out.println("none");
+} // name is garlic
+
+// yield 키워드 사용
+int number = 4;
+int a = switch (number) {
+    case 1:
+        yield 3;
+    default:
+        yield 0;
+};
+System.out.println(a); // 0
+~~~
