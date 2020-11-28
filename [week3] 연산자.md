@@ -55,6 +55,8 @@
             System.out.println("짝수");
     }
     ~~~
+- 양수의 mid 값을 구하는 경우, "(start + end) >>> 1 " 을 사용하면 빠르게 구할 수 있음  
+  또는 int mid = start + (end - start) / 2
   
   </br>
 
