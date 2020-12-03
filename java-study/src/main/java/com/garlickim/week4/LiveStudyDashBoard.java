@@ -1,4 +1,4 @@
-package com.garlickim;
+package com.garlickim.week4;
 
 import org.kohsuke.github.*;
 
@@ -7,13 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Application {
+public class LiveStudyDashBoard {
 
     private final static String TOKEN = "";
 
     public static void main(String[] args) {
-        Application application = new Application();
-        application.run();
+        LiveStudyDashBoard liveStudyDashBoard = new LiveStudyDashBoard();
+        liveStudyDashBoard.run();
     }
 
     private void run() {
