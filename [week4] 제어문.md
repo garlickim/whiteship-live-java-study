@@ -287,3 +287,96 @@ class StackTest {
     }
 }
 ~~~
+
+</br>
+
+### 과제 5. Queue를 구현하세요.
+- 배열을 사용한 경우
+    ~~~java
+    public class Queue {
+        private int size = 10;
+        private int[] nums;
+        private int last;
+
+        public Queue() {
+            nums = new int[size];
+            last = -1;
+        }
+
+        public void enQueue(int data) {
+            last++;
+
+            if (nums.length == last) {
+                int[] tmpNums = new int[size * 2];
+                for (int i = 0; i < nums.length; i++) {
+                    tmpNums[i] = nums[i];
+                }
+                tmpNums[last] = data;
+                nums = tmpNums;
+            } else {
+                nums[last] = data;
+            }
+        }
+
+        public int deQueue() throws Exception {
+            if (last == -1) {
+                throw new Exception("Queue is empty");
+            } else {
+                int result = nums[0];
+
+                for (int i = 1; i < last; i++) {
+                    nums[i - 1] = nums[i];
+                }
+                last--;
+                return result;
+            }
+        }
+
+        public int peek() throws Exception {
+            if (last == -1) {
+                throw new Exception("Queue is empty");
+            } else {
+                return nums[0];
+            }
+        }
+    }
+    ~~~
+    테스트 코드
+    ~~~java
+    class QueueTest {
+        Queue queue = new Queue();
+
+        @BeforeEach
+        void initialize() {
+            queue.enQueue(1);
+            queue.enQueue(2);
+            queue.enQueue(3);
+        }
+
+        @Test
+        @DisplayName("Queue에 1, 2, 3을 삽입 후 peek 하면 결과는 1이다")
+        void enQueue() throws Exception {
+            assertEquals(1, queue.peek());
+        }
+
+        @Test
+        @DisplayName("Queue에 1, 2, 3을 삽입 후 3번의 deQueue 후 4를 삽입 & deQueue하면 결과는 41이다")
+        void deQueue() throws Exception {
+            queue.deQueue();
+            queue.deQueue();
+            queue.deQueue();
+            queue.enQueue(4);
+
+            assertEquals(4, queue.deQueue());
+        }
+
+        @Test
+        @DisplayName("Queue에 1, 2, 3을 삽입 후 여러번 peek을 해도 결과는 1이다")
+        void peek() throws Exception {
+            queue.peek();
+            queue.peek();
+
+            assertEquals(1, queue.peek());
+        }
+    }
+    ~~~
