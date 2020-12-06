@@ -218,4 +218,72 @@ public class Application {
 </br>
 
 
-### 
+### 과제 3. Stack을 구현하세요.
+~~~java
+public class Stack {
+    private int size = 10;
+    private int[] nums;
+    private int top;
+
+    public Stack() {
+        nums = new int[size];
+        top = -1;
+    }
+
+    public void push(int data) {
+        top++;
+
+        if (nums.length == top) {
+            int[] tmpNums = new int[size * 2];
+            for (int i = 0; i < nums.length; i++) {
+                tmpNums[i] = nums[i];
+            }
+            tmpNums[top] = data;
+            nums = tmpNums;
+        } else {
+            nums[top] = data;
+        }
+    }
+
+    public int pop() {
+        if (top == -1) {
+            throw new EmptyStackException();
+        } else {
+            int result = nums[top];
+            top--;
+            return result;
+        }
+    }
+}
+~~~
+
+테스트 코드
+~~~java
+class StackTest {
+    Stack stack = new Stack();
+
+    @BeforeEach
+    void initialize() {
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+    }
+
+
+    @Test
+    @DisplayName("3,4,5를 push 하고 pop한 결과는 5이다")
+    void push() {
+        assertEquals(5, stack.pop());
+    }
+
+    @Test
+    @DisplayName("3,4,5를 push 하고 두번 pop 한 이후 8을 푸시&팝 한 결과는 8이다")
+    void pop() {
+        stack.pop();
+        stack.pop();
+        stack.push(8);
+
+        assertEquals(8, stack.pop());
+    }
+}
+~~~
