@@ -77,13 +77,73 @@ switch (name) {
 
 ### 반복문
 - for statement
-
+    - 값의 범위를 반복할 때 사용
+    - 값이 만족할 때까지 loop을 반복하므로 for loop으로 많이 불림
+    - 기본 구문
+    ~~~java
+    for (initialization(초기화); termination(조건식); increment(증감)) {
+        statement(s) // 식
+    }
+    ~~~
+    - initialization(초기화) 는 구문 시작 시, 최초 값을 초기화하는데 1번 실행됨
+    - termination(조건식) 은 false가 될 때까지, loop을 실행
+    - increment(증가) 은 loop 실행시 매번 실행 됨. 값을 증가/감소 시키는데 사용함
+    - for loop 밖에서 변수가 사용되지 않는다면, 초기화 구문에서 변수를 선언하고 초기화하는 것을 권장
+        - 이유는?? 변수의 수명이 제한되고 오류가 줄어들기 때문!
+    - 무한 loop를 만들고 싶은 경우는 for( ; ; )로 표현
+    
 - foreach statement
+    - collection 또는 배열의 반복을 위해 확장 설계된 for statement
+    - 기본 for loop 보다 간결하게 표현되어, 가독성이 높음
+    ~~~java
+    List<String> list = List.of("A", "B", "C");
+
+    // 기본 for loop
+    for (int i = 0; i < list.size(); i++) {
+        System.out.println(list.get(i));
+    }
+
+    // foreach 구문 (코드가 훨씬 간결함!)
+    for (String s : list) {
+        System.out.println(s);
+    }
+    ~~~
 
 - while statement
+    - while문 내의 조건이 true 일 동안, 코드 블록을 실행함
+    - 기본 구문
+    ~~~java
+    while(조건식){
+        // 코드작성
+    }
+    
+    // example
+    int num = 5;
+    while (num > 0) {
+        System.out.println(num); // 결과 : 5 4 3 2 1
+        num--;
+    }
+    ~~~
 
 - do-while statement
-
+    - do 블록을 포함한 while 문
+    - do 블록은 while 문과 관계없이 무조건 1번은 실행됨
+    - while 문과의 차이는 판단식이 하단에 존재
+    - 기본 구문
+    ~~~java
+    int num = 5;
+    do {
+        System.out.println(num); // 결과는 5 4 3 2 1
+        num--;
+    } while (num > 0);
+    
+    // 조건식을 만족하지 않게 바꾸면??
+    int num = 5;
+    do {
+        System.out.println(num); // 결과는 5 (do 문은 while 문과 관계없이 최초 1번은 꼭 실행 됨)
+        num--;
+    } while (num > 5);
+    ~~~
 
 </br>
 
