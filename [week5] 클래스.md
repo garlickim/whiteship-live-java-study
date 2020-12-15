@@ -46,3 +46,131 @@
 
 
 
+## Optional
+- int 값을 가지고 있는 이진 트리를 나타내는 Node 라는 클래스를 정의하세요.
+- int value, Node left, right를 가지고 있어야 합니다.
+- BinrayTree라는 클래스를 정의하고 주어진 노드를 기준으로 출력하는 bfs(Node node)와 dfs(Node node) 메소드를 구현하세요.
+- DFS는 왼쪽, 루트, 오른쪽 순으로 순회하세요.
+
+Node.java
+~~~java
+public class Node {
+    Node left;
+
+    Node right;
+
+    int value;
+
+    public Node() {
+    }
+
+    public Node(int value, Node left, Node right) {
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+}
+~~~
+
+BinaryTree.java
+~~~java
+public class BinaryTree {
+    Queue<Node> queue = new LinkedList<>();
+    Queue<Integer> result = new LinkedList<>();
+
+    // bfs : 너비 우선
+    void bfs(Node root) {
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node tmpNode = queue.poll();
+            result.add(tmpNode.value);
+
+            if (tmpNode.left != null) {
+                queue.add(tmpNode.left);
+            }
+
+            if (tmpNode.right != null) {
+                queue.add(tmpNode.right);
+            }
+        }
+
+    }
+
+    Stack<Integer> stack = new Stack<>();
+    Integer rootNumber = null;
+
+    // dfs : 깊이 우선
+    void dfs(Node root) {
+
+        Boolean isRoot = false;
+
+        if(rootNumber == null) {
+            isRoot = true;
+            rootNumber=root.value;
+        } else {
+            stack.add(root.value);
+        }
+
+        if (root.left != null) {
+            dfs(root.left);
+        }
+
+        if(isRoot){
+            stack.add(rootNumber);
+        }
+
+        if (root.right != null) {
+            dfs(root.right);
+        }
+    }
+}
+~~~
+
+BinaryTreeTest.java (test code)
+~~~java
+class BinaryTreeTest {
+
+    @Test
+    @DisplayName("bfs 탐색을 하면 1,2,3,4가 나와야한다")
+    void bfs() {
+        // given
+        Node subNode_02 = new Node(3, null, null);
+        Node subNode_03 = new Node(4, null, null);
+        Node subNode_01 = new Node(2, subNode_03, null);
+        Node node = new Node(1, subNode_01, subNode_02);
+
+        // when
+        BinaryTree binaryTree = new BinaryTree();
+        binaryTree.bfs(node);
+
+
+        // then
+        assertEquals(List.of(1, 2, 3, 4), binaryTree.result);
+    }
+
+
+    @Test
+    @DisplayName("bfs 탐색을 왼쪽 -> 루트 -> 오른쪽으로 하면 2,4,1,3이 나와야한다")
+    void dfs() {
+        // given
+        Node subNode_02 = new Node(3, null, null);
+        Node subNode_03 = new Node(4, null, null);
+        Node subNode_01 = new Node(2, subNode_03, null);
+        Node node = new Node(1, subNode_01, subNode_02);
+
+        // when
+        BinaryTree binaryTree = new BinaryTree();
+        binaryTree.dfs(node);
+
+
+        Stack<Integer> expected = new Stack<>();
+        expected.add(2);
+        expected.add(4);
+        expected.add(1);
+        expected.add(3);
+
+        // then
+        assertEquals(expected, binaryTree.stack);
+    }
+}
+~~~
