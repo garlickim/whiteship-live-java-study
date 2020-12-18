@@ -32,15 +32,84 @@
 </br>
 
 ### 메소드 정의하는 방법
-
+- 일반적인 메소드 선언은 아래와 같음
+  ~~~java
+  returnType methodName() {
+    // method body
+  }
+  ~~~
+- 메소드 선언에는 6개의 구성요소가 있음
+  1. modifiers : 접근제어자, public/private/protected/default
+  2. return type : 메소드가 리턴할 값의 type, return 값이 없는 경우 void
+  3. method name : 메소드 이름
+  4. parameter list in parenthesis : 매개 변수 목록, 괄호()로 묶임, 매개 변수가 없는 경우는 빈괄호 사용
+  5. exception list : 메소드에서 발생할 수 있는 예외 목록
+  6. method body : braces로 둘러쌓인 메소드 body, 지역 변수 및 코드가 포함 됨
+- 메소드 이름 규칙
+  - 소문자로된 동사 또는 여러 단어로 이루어짐
+  - 여러 단어로 이루어진 경우, 다음 단어의 글자는 대문자로 작성
+  - 메소도는 클래스 내에서 고유함 (method overload)
+    ~~~java
+    public class DataArtist { 
+      ... 
+      public void draw (String s) { 
+          ... 
+      } 
+      public void draw (int i) { 
+          ... 
+      } 
+    }
+    ~~~
+  
 </br>
 
 ### 생성자 정의하는 방법
+- 생성자(constructor) : 객체를 초기화하는데 사용됨
+- 객체 속성에 대한 초기값을 설정하는데 사용 가능
+- 생성자 이름은 클래스 이름과 일치해야하며, return type을 가질 수 없음
+- 모든 클래스에서는 기본 생성자가 존재
+- 클래스 생성자를 직접 생성하지 않으면 Compiler에 의해 기본 생성자가 생성 됨
+~~~java
+public class Car {
+  public Car() { // 기본 생성자
+  }
+  
+  public Car(String name){  // 파라미터가 있는 생성자
+  }
+}
+~~~
 
 </br>
 
 ### this 키워드 이해하기
+- 메소드 또는 생성자의 현재 Object를 참조함
+- 다음 용도로 사용 가능
+  - 현재 클래스의 생성자 호출
+  - 현재 클래스의 메소드 호출
+  - 현재 클래스의 객체를 반환
+  - 메소드 호출에서 parameter 전달
+  - 생성자 호출에서 parameter 전달
+~~~java
+public class Point {
+    public int x = 0;
+    public int y = 0;
+        
+    //constructor
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 
+public class Rectangle {
+    private int x, y;
+    private int width, height;
+        
+    public Rectangle() {
+        this(0, 0, 1, 1);
+    }
+}
+~~~
 
 </br>
 
