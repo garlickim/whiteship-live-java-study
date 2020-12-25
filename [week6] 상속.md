@@ -221,6 +221,31 @@ public class Subclass extends Superclass {
     </br>
     
 ### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
+- 컴파일 타임이 아닌 런타임에 오버라이딩된 메소드에 대한 호출이 해결되는 메커니즘
+- 메소드를 호출하는 object의 type에 따라 런타임 시점에 컴파일러에 의해 결정됨
+  ~~~java
+  class Animal {
+     public void move() {
+        System.out.println("Animals can move");
+     }
+  }
+  class Dog extends Animal {
+     public void move() {
+        System.out.println("Dogs can walk and run");
+     }
+  }
+
+  public class TestDog {
+     public static void main(String args[]) {
+
+        Animal a = new Animal(); // Animal reference and object
+        Animal b = new Dog(); // Animal reference but Dog object
+
+        a.move(); // runs the method in Animal class
+        b.move(); // runs the method in Dog class
+     }
+  }
+  ~~~
 
 </br>
 
