@@ -221,6 +221,58 @@ public class Subclass extends Superclass {
     </br>
     
 ### 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
+
+</br>
+
 ### 추상 클래스
+- 구체적으로 정의되지 않은 클래스
+- 인터페이스의 역할을 하며, 일부 구현체를 가지기도 함
+- instance화 할 수는 없지만, subclass에서 구현하여 생성은 가능함
+- 추상 메소드가 포함된 경우, 클래스 자체를 추상 클래스로 선언해야 함
+  ~~~java
+  public abstract class GraphicObject {
+     abstract void draw();
+  }
+  ~~~
+- 추상 클래스가 subclass에서 구현될 때 모든 추상 메소드에 대한 구현을 제공해야 함
+  - 그렇지 않은 경우 subclass도 abstract으로 선언되어야 함
+- 인터페이스와 추상 클래스
+  - 아래와 같은 상황에서는 추상 클래스를 사용하도록 고려
+    - 밀접하게 관련된 여러 클래스간에 코드를 공유하는 경우
+    - subclass에는 많은 공통 메소드/필드가 있는 경우
+    - non-static 또는 non-final를 선언하여 객체 상태에 액세스 및 수정할 수 있는 메소드를 정의하는 경우
+  - 아래와 같은 상황에서는 인터페이스를 사용하도록 고려
+    - 관련 없는 클래스가 subclass에서 구현되는 경우 (comparable, clonable)
+    - 특정 동작을 지정하고자 하지만, 동작을 구현하는 사람은 신경쓰지 않게 하고 싶은 경우
+    - 다중 상속을 활용하는 경우
+  - 추상 클래스는 static 필드와 static 메소드를 가질 수 있음
+
+</br>
+
 ### final 키워드
+- 값을 딱 한번만 할당하도록 제한하는 키워드
+- 메소드 일부 또는 전체를 final로 선언 가능
+- final 키워드를 사용하여 메소드를 선언하면, 하위 클래스에서 오버라이딩이 불가능 함
+- 변경이 불가능하도록 메소드를 최종 상태로 만드는데 사용
+  ~~~java
+  class ChessAlgorithm {
+      enum ChessPlayer { WHITE, BLACK }
+      ...
+      final ChessPlayer getFirstPlayer() {
+          return ChessPlayer.WHITE;
+      }
+      ...
+  }
+  ~~~
+- 클래스 전체를 final로 선언 가능
+  - 불변 클래스를 만들 때, 유용함
+- 생성자에서 호출되는 메소드는 일반적으로 final로 선언되어야 함
+  - 생성자에서 일반 메소드를 호출하는 경우, 원치않는 결과가 나올 수 있음 (메소드 오버라이딩으로 인해)
+  
+</br>
+
 ### Object 클래스
+- 클래스 계층 구조의 Root
+- 모든 클래스는 Object 클래스를 superclass로 갖음
+- clone(), equals(Object obj), finalize(), getClass(), hashCode(), notify(), notifyAll(), toString(), wait(), wait(long timeout), wait(long timeout, int nanos) 메소드를 가지고 있음
+  - 따라서, java의 모든 클래스는 위와 같은 메소드를 상속받고 있음
