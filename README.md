@@ -12,4 +12,5 @@
 [[week2] 자바 데이터 타입, 변수 그리고 배열](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek2%5D%20%EC%9E%90%EB%B0%94%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%2C%20%EB%B3%80%EC%88%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%B0%B0%EC%97%B4.md)  
 [[week3] 연산자](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek3%5D%20%EC%97%B0%EC%82%B0%EC%9E%90.md)  
 [[week4] 제어문](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek4%5D%20%EC%A0%9C%EC%96%B4%EB%AC%B8.md)  
-[[week5] 클래스](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek5%5D%20%ED%81%B4%EB%9E%98%EC%8A%A4.md)
+[[week5] 클래스](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek5%5D%20%ED%81%B4%EB%9E%98%EC%8A%A4.md)  
+[[week6] 상속](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek6%5D%20%EC%83%81%EC%86%8D.md)
