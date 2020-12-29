@@ -52,7 +52,32 @@
 - JVM이 클래스 파일을 찾는 기준 결로
 - :(콜론)을 사용하여 경로를 구분
 - application class loader는 설정된 classpath를 기반으로 지정된 경로에 있는 클래스를 로딩
-- 
+- 클래스패스는 package 계층 구조의 "최상위 경로"
+~~~java
+class A {
+    void println(){
+        System.out.println("inside A");
+    }
+}
+
+class B {
+    public static void main(String[] args) {
+        A a = new A();
+        a.println();
+    }
+}
+~~~
+![classpath-sample](./img/classpath-sample.png)  
+java 명령에서 사용한 -cp
+  - javac에 의해 컴파일되어 생성된 A.class와 B.class
+  - 동일한 경로에서 java 명령어를 사용하여 실행하면 정상
+  - A.class 파일을 하위 tmp 폴더로 이동
+  - 아까와 동일한 경로에서 java 명령어를 사용하여 실행하면 java.lang.ClassNotFoundException: A 에러 발생
+  - -cp 옵션을 사용하여 classpath 경로를 지정하여 실행하면 정상
+    - -cp ".:tmp" 은 현재 디렉토리 기준으로 class 파일을 찾고 없으면 tmp 폴더에서 찾는다는 의미
+    
+![classpath-sample2](./img/classpath-sample2.png)  
+javac 명령에서 사용한 -cp
 
 </br>
 
@@ -61,6 +86,9 @@
 </br>
 
 ## -classpath 옵션
+-  -cp <디렉토리 및 zip/jar 파일의 클래스 검색 경로>
+-  -classpath <디렉토리 및 zip/jar 파일의 클래스 검색 경로>
+-  --class-path <디렉토리 및 zip/jar 파일의 클래스 검색 경로> 클래스 파일을 검색하기 위한 디렉토리, JAR 아카이브 및 ZIP 아카이브의 :(으)로 구분된 목록
 
 </br>
 
