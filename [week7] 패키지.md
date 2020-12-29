@@ -24,10 +24,35 @@
 </br>
 
 ## import 키워드
-
+- 외부에서 package 멤버를 사용하려면 몇가지 방식이 존재
+  - full package 명으로 접근
+    - 코드 가독성이 떨어짐
+     ~~~java
+     graphics.Rectangle myRect = new graphics.Rectangle();
+     ~~~
+  - package member import
+    - package 명령문 다음에 import 키워드를 사용하여 특정 멤버를 가져옴
+    ~~~java
+    package com.naver.dto // 현재 패키지
+    import graphics.Rectangle; 
+    
+    class Shape {
+    }
+    ~~~
+  - 전체 package import
+    - 특정 패키지에 포함된 모든 type을 가져오려면 import *(wild card)를 사용
+    ~~~java
+    import graphics.*; 
+    ~~~
+  
 </br>
 
 ## 클래스패스
+- 클래스를 찾기위한 경로
+- JVM이 클래스 파일을 찾는 기준 결로
+- :(콜론)을 사용하여 경로를 구분
+- application class loader는 설정된 classpath를 기반으로 지정된 경로에 있는 클래스를 로딩
+- 
 
 </br>
 
