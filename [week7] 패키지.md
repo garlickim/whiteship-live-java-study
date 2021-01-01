@@ -82,6 +82,28 @@ javac 명령에서 사용한 -cp
 </br>
 
 ## CLASSPATH 환경변수
+- 환경변수란?
+  - 프로세스가 컴퓨터에서 동작하는 방식에 영향을 미치는 동적인 값
+  - OS상에서 동작하는 응용프로그램들이 참조하기위한 설정 기록
+  - 환경변수는 2가지로 구분됨
+    - 사용자 변수 : OS내의 사용자 별로 다르게 설정가능한 환경변수
+    - 시스템 변수 : 시스템 전체에 모두 적용되는 환경변수
+- 자바 실행시 매번 -cp 와 같은 클래스패스 옵션을 주는게 번거롭다면 CLASSPATH 환경변수 설정을 통해 지정 가능
+- linux 의 jdk CLASSPATH 설정 예시
+  ~~~bash
+   vi /etc/profile 에 들어가서 맨밑에 추가
+
+  export JAVA_HOME=/usr/local/src/jdk1.8.0_144
+  export PATH=$JAVA_HOME/bin:$PATH
+  export CLASSPATH=$CLASSPATH:$JAVA_HOME/jre/lib/ext:$JAVA_HOME/lib/tools.jar
+  ~~~
+- macos 의 jdk CLASSPATH 설정 예시
+  ~~~bash
+  vi ~/.bash_profile
+
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
+  export PATH=${PATH}:$JAVA_HOME/bin
+  ~~~
 
 </br>
 
