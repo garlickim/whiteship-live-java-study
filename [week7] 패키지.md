@@ -115,3 +115,17 @@ javac 명령에서 사용한 -cp
 </br>
 
 ## 접근지시자
+- 클래스, 변수, 메소드, 인스턴스의 접근 허용 범위를 지정하는 지시자 (Access Modifier)
+- public, private, default(package-private), protected가 있음
+
+| 지시자 | 클래스 내부 | 동일 패키지 | 상속 클래스 | 이외 영역 |
+| ----- | ---------|----------|----------|--------|
+| private | O | X | X | X |
+| default(package-private) | O | O | X | X |
+| protected | O | O | O | X |
+| public | O | O | O | O |
+
+- 접근 범위는 public > protected > default > private 순으로 넓음
+- 접근제어자를 아무것도 작성하지 않은 경우는 default, 즉 package-private으로 지정됨
+  - 같은 패키지 내에서만 접근 가능함
+
