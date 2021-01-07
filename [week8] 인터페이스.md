@@ -141,5 +141,60 @@ public interface Car{
 </br>
 
 ## 인터페이스의 static 메소드, 자바 8
+- 인터페이스에서 static 메소드를 정의 가능
+- 인터페이스의 static 메소드는 오버라이딩이 불가능
+  - 오버라이딩시 컴파일 에러 발생  
+    ![interface-static-method-example](./img/interface-static-method.png)  
+- 인터페이스명으로 직접 호출하여 사용해야 함 (구현체 없이 사용 가능)
+  ~~~java
+  interface Car {
+      static int move(int distance){
+          return ++distance;
+      }
+  }
+
+  class Example {
+      public static void main(String[] args) {
+          System.out.println(Car.move(1));
+      }
+  }
+  ~~~
+
+</br>
 
 ## 인터페이스의 private 메소드, 자바 9
+- 인터페이스 내에서 private 키워드를 사용하여 private method, private static method 생성이 가능해짐
+- 인터페이스는 기본 public 접근제어자를 가지고 있지만, private으로 선언된 메소드는 상속이 되지 않음
+- private 메소드는 구현부가 존재
+  - 구현부가 없는 private 메소드는 컴파일 에러 발생
+  ~~~java
+  interface Car {
+      private void name(String name){
+          System.out.println(name);
+      }
+
+      private static int move(int distance){
+          return ++distance;
+      }
+  }
+  ~~~
+- private method는 인터페이스 내의 다른 메소드를 호출 가능함 
+ - private static method는 static method만 호출 가능
+  ~~~java
+  interface Car {
+      private void name(String name){
+          System.out.println("name is "+ name);
+          System.out.println("color is "+ getColor("RED"));
+      }
+
+      private static int move(int distance){
+          return ++distance;
+      }
+
+      String getColor(String color);
+  }
+  ~~~
+
+
+
+
