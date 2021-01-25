@@ -102,6 +102,7 @@
 - 사용자 입장에서의 쓰레드 시작은 start() 메소드를 사용
 - 실제 쓰레드의 순서는 아래와 같음
   ![java-thread-life-cycle](./img/java-thread-life-cycle.png)
+  출처 : http://www.btechsmartclass.com/java/java_images/java-thread-life-cycle.png
 - start()
   - 쓰레드 실행 (쓰레드 실행대기 상태에서 OS 스케쥴러에 의해 차례가 돌아오면 실행됨)
 - start()와 run() 차이
