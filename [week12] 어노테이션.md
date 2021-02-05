@@ -114,3 +114,5 @@
 - 컴파일 타임에 어노테이션을 프로세싱하여 코드를 변경 또는 조작하는 프로세서
 - 롬복이 대표적인 예로, @Getter/@Setter 어노테이션을 통해 컴파일시 getter/setter 메소드를 생성함
 - AbstractProcessor를 상속받아 구현체를 만들 수 있음
+- 읽어볼만한 아티클 추가
+  - https://www.baeldung.com/java-annotation-processing-builder
