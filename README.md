@@ -19,3 +19,4 @@
 [[week9] 예외처리](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek9%5D%20%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC.md)    
 [[week10] 멀티쓰레드](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek10%5D%20%EB%A9%80%ED%8B%B0%EC%93%B0%EB%A0%88%EB%93%9C.md)  
 [[week11] Enum](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek11%5D%20Enum.md)  
+[[week12] 어노테이션](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek12%5D%20%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98.md)  
