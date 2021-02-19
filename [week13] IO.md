@@ -95,9 +95,62 @@
 </br>
 
 ## 표준 스트림 (System.in, System.out, System.err)
-- 
+- 표준 스트림이란, 모니터/키보드등을 통하여 입출력하는 스트림
+- java.lang.System 를 통해 표준 스트림을 제공하며, System.in, System.out, System.err가 있음
+- System.in
+  - 표준 입력 스트림
+  - 스트림은 열려있는 상태로 입력을 받으면 됨
+  - InputStream Type 으로 System.in의 객체를 할당
+  ![system.in](./img/system.in.png)
+- System.out
+  - 표준 출력 스트림
+  - 스트림은 열러있는 상태로 데이터를 출력하면 됨
+  - 호스트 환경이나 사용자가 지정한 출력 대상에 스트림이 출력 됨
+  - PrintStream Type
+  - 일반적으로 자바에서 콘솔에 데이터를 찍을 때 흔히 사용하던 System.out.println() 이 대표적인 예
+  ![system.out](./img/system.out.png)
+- System.err
+  - 표준 오류 출력 스트림
+  - 스트림은 열려있는 상태로 출력 데이터를 받을 준비가 되어 있음
+  - 사용자가 주목해야하는 오류 메시지 및 기타 정보를 출력하는데 사용
+  - System.out과 마찬가지로 PrintStream Type
+  ![system.err](./img/system.err.png)
+
+</br>
 
 ## 파일 읽고 쓰기
-
-
-
+- File 클래스
+  - 파일 크기, 속성, 이름 등의 정보를 얻고, 파일 생성 및 삭제 기능을 제공
+  - | return type | method | description |   
+    |---------|---------------------|--------------|  
+    | boolean | canExecute() | 실행가능한 파일인지 확인 |  
+    | boolean | canRead() | 읽을 수 있는 파일인지 확인 |  
+    | boolean | canWrite() | 쓸 수 있는 파일인지 확인 |  
+    | int | compareTo(File pathname) | 경로 이름 비교 |  
+    | boolean | createNewFile() | 경로에 파일이 존재하지 않는 경우, 빈 파일 생성 |  
+    | static File | createTempFile(String prefix, String suffix) | prefix와 suffix를 사용하여 파일 이름 생성 및 임시 파일 생성 | 
+    | static File | createTempFile(String prefix, String suffix, File directory) | prefix와 suffix를 사용하여 파일 이름 생성 및 지정된 경로에 임시 파일 생성 |   
+    | boolean | delete() | 파일 또는 디렉토리 삭제 | 
+    | void | deleteOnExit() | VM이 종료될 때 해당 결로의 파일 또는 디렉토리를 삭제하도록 요청 |  
+    | boolean | equals(Object obj) | object 비교 |  
+    | boolean | exists() | 해당 경로에 파일 또는 디렉토리가 존재하는지 확인 |
+    | File | getAbsoluteFile() | pathname의 절대 경로 리턴 |
+    | String | getAbsoluteFile() | pathname의 절대 경로 리턴 |
+    | File | getCanonicalFile() | pathname의 정식 경로 리턴 |
+    | String | getCanonicalFile() | pathname의 정식 경로 리턴 |
+    | long | getFreeSpace() | 해당 경로의 빈 공간 크기 리턴 |
+    | String | getName() | 파일 또는 디렉토리의 이름 리턴 | 
+    | String | getParent() | 추상 경로의 부모 경로명 리턴, 추상 경로에 부모 디렉토리를 지정하지 않으면 null 리턴 | 
+    | File | getParentFile() | 추상 경로의 부모 경로명 리턴, 추상 경로에 부모 디렉토리를 지정하지 않으면 null 리턴 |
+    | String | getPath() | 절대 경로 리턴 |
+    | long | getTotalSpace() | 해당 경로의 파티션 크기 리턴 | 
+    | long | getUsableSpace() | 해당 경로의 사용할 수 있는 공간의 바이트를 리턴 |
+    | int | hashCode() | hachCode 리턴 | 
+    | boolean | isAbsolute() | 절대경로인지 여부 리턴 |
+    | boolean | isDirectory() | 디렉토리 여부 리턴 |
+    | boolean | isFile() | file 여부 리턴 |
+    | boolean | isHidden() | 숨김 파일인지 여부 리턴 |
+    | long | lastModified() | 최근 수정된 시간 시턴 |
+    | long | length() | 파일의 길이 리턴 |
+    
+- FileReader/FileWriter 샘플은 위의 예시 코드 참고
