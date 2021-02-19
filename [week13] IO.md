@@ -100,20 +100,20 @@
 - System.in
   - 표준 입력 스트림
   - 스트림은 열려있는 상태로 입력을 받으면 됨
-  - InputStream Type 으로 System.in의 객체를 할당
+  - InputStream Type 으로 System.in의 객체를 할당  
   ![system.in](./img/system.in.png)
 - System.out
   - 표준 출력 스트림
   - 스트림은 열러있는 상태로 데이터를 출력하면 됨
   - 호스트 환경이나 사용자가 지정한 출력 대상에 스트림이 출력 됨
   - PrintStream Type
-  - 일반적으로 자바에서 콘솔에 데이터를 찍을 때 흔히 사용하던 System.out.println() 이 대표적인 예
+  - 일반적으로 자바에서 콘솔에 데이터를 찍을 때 흔히 사용하던 System.out.println() 이 대표적인 예  
   ![system.out](./img/system.out.png)
 - System.err
   - 표준 오류 출력 스트림
   - 스트림은 열려있는 상태로 출력 데이터를 받을 준비가 되어 있음
   - 사용자가 주목해야하는 오류 메시지 및 기타 정보를 출력하는데 사용
-  - System.out과 마찬가지로 PrintStream Type
+  - System.out과 마찬가지로 PrintStream Type  
   ![system.err](./img/system.err.png)
 
 </br>
@@ -152,5 +152,24 @@
     | boolean | isHidden() | 숨김 파일인지 여부 리턴 |
     | long | lastModified() | 최근 수정된 시간 시턴 |
     | long | length() | 파일의 길이 리턴 |
-    
+    | String[] | list() | 파일 및 디렉토리를 나타내는 문자열 배열 리턴 | 
+    | String[] | list(FilenameFilter filter) | filter를 만족하는 파일 및 디렉토리를 나타내는 문자열 배열 리턴 |
+    | File[] | listFiles() | 지정된 경로 아래의 파일 및 디렉토리 리스트를 리턴 | 
+    | File[] | listFiles(FileFilter filter) | filter를 만족하는 지정된 경로 아래의 파일 및 디렉토리 리스트를 리턴 | 
+    | File[] | listFiles(FilenameFilter filter) | filter를 만족하는 지정된 경로 아래의 파일 및 디렉토리 리스트를 리턴 |
+    | static File[]	| listRoots() | 사용 가능한 파일 시스템 루트를 리턴 |
+    | boolean	| mkdir() | 해당 경로에 디렉토리 생성 |
+    | boolean	| mkdirs() | 해당 경로에 디렉토리 생성. 부모 디렉토리가 없는 경우 생성 |
+    | boolean	| renameTo(File dest) | 파일 이름 변경 |
+    | boolean	| setExecutable(boolean executable) | executable에 따라 실행 가능한/불가능한 파일로 셋팅 |
+    | boolean	| setExecutable(boolean executable, boolean ownerOnly) | executable에 따라 실행 가능한/불가능한 파일로 셋팅. ownerOnly에 따라 실행권한 설정 |
+    | boolean	| setLastModified(long time) | 주어진 time으로 최근 수정시간을 변경 |
+    | boolean	| setReadable(boolean readable) | readable에 따라 읽기가 가능한/불가능한 파일 또는 디렉토리로 셋팅 |
+    | boolean	| setReadable(boolean readable, boolean ownerOnly) | executable에 따라 읽기가 가능한/불가능한 파일로 셋팅. ownerOnly에 따라 읽기 권한 설정 |
+    | boolean	| setReadOnly() | 읽기만 가능하도록 파일 또는 디렉토리 권한 변경 |
+    | boolean	| setWritable(boolean writable) | writable에 따라 읽기가 가능/불가능 하도록 설정 |
+    | boolean	| setWritable(boolean writable, boolean ownerOnly) | writable에 따라 읽기가 가능/불가능 하도록 설정. ownerOnly에 따라 쓰기 권한 설정 |
+    | Path |	toPath() | 해당 경로의 java.nio.file.Path 객체 리턴 |
+    | String | toString() | 해당 경로의 string 값 리턴 |
+    | URI | toURI() | 해당 경로를 나타내는 URI 타입의 값을 리턴 |
 - FileReader/FileWriter 샘플은 위의 예시 코드 참고
