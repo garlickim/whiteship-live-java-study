@@ -114,7 +114,40 @@ list.add(1234); // compile error !!
 </br>
 
 ## 제네릭 메소드 만들기
+- 메소드 return type 앞에 diamond 연산자를 사용하여 type parameter 목록을 선언
+  - static 메소드의 경우 static과 return type 앞에 선언
+~~~java
+class Shape {
+    <T> void setShape(T t) {
+    }
+}
 
+class Name {
+    static <T> void setName(T t) {
+        
+    }
+}
+~~~
+~~~java
+class Pair<K, V> {
+  private K key;
+  private V value;
+
+  public Pair(K key, V value){
+      this.key = key;
+      this.value = value;
+  }
+
+  public K getKey() {
+      return this.key;
+  }
+  public V getValue() {
+      return this.value;
+  }
+}
+~~~
+
+</br>
 
 ## Erasure
 
