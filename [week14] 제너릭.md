@@ -150,7 +150,11 @@ class Pair<K, V> {
 </br>
 
 ## Erasure
-
-
+- 컴파일러에 의해 모든 타입 파라미터가 지워지고, 제너릭 타입에 대한 정보가 없는 것
+- 제너릭이 도입되기 전의 소스코드와의 호환성을 유지하기 위해 Erasure가 존재
+- \<T extends Car\> 의 제너릭 타입은 컴파일시 Car로 치환 됨
+- \<T\> 의 제너릭 타입은 컴파일시 Object로 치환 됨  
+![erasure-ex01](./img/erasure-ex01.png)  
+![erasure-ex02](./img/erasure-ex02.png)  
 
 
