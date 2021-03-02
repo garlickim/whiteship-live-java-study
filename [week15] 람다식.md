@@ -29,9 +29,9 @@
 ## 함수형 인터페이스
 - 단 하나의 "추상 메소드(abstract method)"를 갖는 인터페이스
 - @FunctionalInterface 어노테이션을 사용하여 함수형 인터페이스라는 것을 명시 가능
-- 하나 이상의 추상 메소드를 선언하면, compile error 발생
+- 하나 이상의 추상 메소드를 선언하면, compile error 발생  
   ![functionalInterface-ex01](./img/functionalInterface-ex01.png)  
-- 하지만!! java8 부터 인터페이스에 default/static 메소드를 가질 수 있으므로 해당 메소드들의 선언은 compile error가 발생하지 않음
+- 하지만!! java8 부터 인터페이스에 default/static 메소드를 가질 수 있으므로 해당 메소드들의 선언은 compile error가 발생하지 않음  
   ![functionalInterface-ex02](./img/functionalInterface-ex02.png)  
 
 </br>
@@ -45,8 +45,8 @@
     - final 키워드가 붙어있지 않았지만 final 키워드를 붙힌 것과 동일하게 컴파일러에서 처리
   - 왜 final 이거나 final 처럼 동작해야할까?
     - 참조하는 지역변수를 관리하는 쓰레드와 람다식을 실행하는 쓰레드가 다른 경우,   
-      지역변수의 변경이 일어나고 람다식을 실행하는 쓰레드에서 해당 값이 최신값인지 동기화된 값인지 알 수가 없어 기대하는 값과 다른 결과를 도출할 수 있음
-![variable-capturing-ex01](./img/variable-capturing-ex01.png)
+      지역변수의 변경이 일어나고 람다식을 실행하는 쓰레드에서 해당 값이 최신값인지 동기화된 값인지 알 수가 없어 기대하는 값과 다른 결과를 도출할 수 있음  
+![variable-capturing-ex01](./img/variable-capturing-ex01.png)  
 - 람다식에서 참조하는 지역변수 값은 직접 참조가 아닌 복사본
   - 왜 복사본을 사용할까?
     - 지역 변수는 stack에 저장되고, 지역 변수가 선언된 블록이 끝나면 해당 변수값은 stack에서 사라짐
