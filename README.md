@@ -21,4 +21,5 @@
 [[week11] Enum](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek11%5D%20Enum.md)  
 [[week12] 어노테이션](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek12%5D%20%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98.md)  
 [[week13] I/O](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek13%5D%20IO.md)  
-[[week14] 제너릭](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek14%5D%20%EC%A0%9C%EB%84%88%EB%A6%AD.md)  
+[[week14] 제너릭](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek14%5D%20%EC%A0%9C%EB%84%88%EB%A6%AD.md)    
+[[week15] 람다식](https://github.com/garlickim/whiteship-live-java-study/blob/main/%5Bweek15%5D%20%EB%9E%8C%EB%8B%A4%EC%8B%9D.md)  
