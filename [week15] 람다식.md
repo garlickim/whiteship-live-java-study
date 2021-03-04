@@ -58,4 +58,19 @@
 ## 메소드, 생성자 레퍼런스
 - 람다 표현식이 단 하나의 메소드만을 호출하는 경우, 람다 표현식에서 불필요한 매개변수를 제거하고 축약하여 표현할 수 있는 방법
 - 불필요한 매개변수를 제거하고 '::' 기호를 사용하여 표현
-- 
+- :: 연산자는 객체 또는 클래스와 메서드 이름을 구분
+- 람다 표현식 x -> System.out.println(x)를 System.out::println 으로 표현 가능
+- Static Method Reference / Instance Method Reference / Constructor Method Reference 3가지의 메소드 레퍼런스가 존재
+- Static Method Reference
+  - 기존 아래와 같이 사용되던 static method 호출을 2번째 사진과 같이 reference로 호출 가능  
+  ![static-method-reference01](./img/static-method-reference01.png)    
+  ![static-method-reference02](./img/static-method-reference02.png)    
+- Instance Method Reference
+  - 기존 아래와 같이 사용되던 instance method 호출을 2번째 사진과 같이 reference로 호출 가능  
+  ![instance-method-reference01](./img/instance-method-reference01.png)  
+  ![instance-method-reference02](./img/instance-method-reference02.png)  
+- Constructor Method Reference
+  - 메소드 레퍼런스 방식과 동일하게 생성자도 레퍼런스로 참조 가능
+  - 기존 아래와 같이 생성자를 호출하던 방식을 2번째 사진과 같이 ::new 를 사용하여 호출 가능  
+  ![constructor-method-reference01](./img/constructor-method-reference01.png)    
+  ![constructor-method-reference02](./img/constructor-method-reference02.png)    
