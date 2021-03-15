@@ -19,9 +19,9 @@ public interface Car{
 ## 인터페이스 구현하는 방법
 - 구체화된 클래스명을 가진 클래스에 implements 키워드를 사용하여 구현
 - implements 키워드에 의해 인터페이스를 상속받으면 컴파일러에 의해 인터페이스를 구현하라고 에러 발생
-  ![interface-compile-error](./img/interface-compile-error.png)  
+  ![interface-compile-error](/img/interface-compile-error.png)  
 - 인터페이스에 선언된 메소드를 모두 오버라이딩
-  ![interface-sample](./img/interface-sample.png)  
+  ![interface-sample](/img/interface-sample.png)  
 - default 메소드는 오버라이딩 하지 않아도 됨
 - 필수 오버라이딩이 아니기 때문에, 공통적인 내용을 담고 있는 메소드로 많이 사용되며 필요한 경우에만 오버라이딩하여 사용할 수 있음
 
@@ -144,7 +144,7 @@ public interface Car{
 - 인터페이스에서 static 메소드를 정의 가능
 - 인터페이스의 static 메소드는 오버라이딩이 불가능
   - 오버라이딩시 컴파일 에러 발생  
-    ![interface-static-method-example](./img/interface-static-method.png)  
+    ![interface-static-method-example](/img/interface-static-method.png)  
 - 인터페이스명으로 직접 호출하여 사용해야 함 (구현체 없이 사용 가능)
   ~~~java
   interface Car {

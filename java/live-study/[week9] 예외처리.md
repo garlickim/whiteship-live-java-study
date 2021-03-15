@@ -57,7 +57,7 @@ class Example {
 </br>  
 
 ## 자바가 제공하는 예외 계층 구조
-![throwable-structure](./img/throwable-structure.png)  
+![throwable-structure](/img/throwable-structure.png)  
 - Throwable 클래스는 Object 클래스로부터 시작
 - Throwable 클래스는 Error와 Exception으로 나뉨
 - Exception 클래스는 RuntimeException을 상속하는지에 따라 CheckedException과 UncheckedExcpetion으로 나뉨

@@ -67,7 +67,7 @@ class B {
     }
 }
 ~~~
-![classpath-sample](./img/classpath-sample.png)  
+![classpath-sample](/img/classpath-sample.png)  
 java 명령에서 사용한 -cp
   - javac에 의해 컴파일되어 생성된 A.class와 B.class
   - 동일한 경로에서 java 명령어를 사용하여 실행하면 정상
@@ -76,7 +76,7 @@ java 명령에서 사용한 -cp
   - -cp 옵션을 사용하여 classpath 경로를 지정하여 실행하면 정상
     - -cp ".:tmp" 은 현재 디렉토리 기준으로 class 파일을 찾고 없으면 tmp 폴더에서 찾는다는 의미
     
-![classpath-sample2](./img/classpath-sample2.png)  
+![classpath-sample2](/img/classpath-sample2.png)  
 javac 명령에서 사용한 -cp
 
 </br>

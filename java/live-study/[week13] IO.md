@@ -9,8 +9,8 @@
 
 ## 스트림 (Stream) / 버퍼 (Buffer) / 채널 (Channel) 기반의 I/O
 - I/O Streams  
-  ![stream-io-read](./img/stream-io-read.png)
-  ![stream-io-write](./img/stream-io-write.png)
+  ![stream-io-read](/img/stream-io-read.png)
+  ![stream-io-write](/img/stream-io-write.png)
   - 입력과 출력의 데이터 전송이 단방향으로 이루어짐
   - FIFO 구조를 지님
 
@@ -101,20 +101,20 @@
   - 표준 입력 스트림
   - 스트림은 열려있는 상태로 입력을 받으면 됨
   - InputStream Type 으로 System.in의 객체를 할당  
-  ![system.in](./img/system.in.png)
+  ![system.in](/img/system.in.png)
 - System.out
   - 표준 출력 스트림
   - 스트림은 열러있는 상태로 데이터를 출력하면 됨
   - 호스트 환경이나 사용자가 지정한 출력 대상에 스트림이 출력 됨
   - PrintStream Type
   - 일반적으로 자바에서 콘솔에 데이터를 찍을 때 흔히 사용하던 System.out.println() 이 대표적인 예  
-  ![system.out](./img/system.out.png)
+  ![system.out](/img/system.out.png)
 - System.err
   - 표준 오류 출력 스트림
   - 스트림은 열려있는 상태로 출력 데이터를 받을 준비가 되어 있음
   - 사용자가 주목해야하는 오류 메시지 및 기타 정보를 출력하는데 사용
   - System.out과 마찬가지로 PrintStream Type  
-  ![system.err](./img/system.err.png)
+  ![system.err](/img/system.err.png)
 
 </br>
 

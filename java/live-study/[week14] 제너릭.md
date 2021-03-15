@@ -92,16 +92,16 @@ list.add(1234); // compile error !!
   - **여기서 의문점!!! 그렇다면 Bounded Type과의 차이점은 도대체 뭐지??**
     - 아래 코드로 보자
       - Bounded Type과 Bounded wildcard type은 아래 예제와 같이 동일하게 사용 가능  
-      ![bounded-sample](./img/bounded-sample.png)
+      ![bounded-sample](/img/bounded-sample.png)
       - 차이점은!! Bounded Type의 경우 interface를 함께 상속 받을 수 있음. 반면 Bounded wildcard type의 경우는 하나의 타입만 상속 가능  
-      ![bounded-sample2](./img/bounded-sample2.png)
+      ![bounded-sample2](/img/bounded-sample2.png)
 - Unbounded wildcard type 
   - List<?> 와 같은 형식으로 사용
   - Type의 관계없이 어떠한 것도 올 수 있음
   - Object 클래스에서 제공되는 기능을 사용하여 구현하는 메소드를 작성하는 경우에 사용
   - 코드가 type 파라미터에 의존하지 않는 Generic 클래스의 메소드를 사용하는 경우에 사용
     - 예를 들어 List.size 또는 List.clear와 같은 메소드는 T에 의존하지 않음   
-    ![unbounded-wildcard-type](./img/unbounded-wildcard-type.png)
+    ![unbounded-wildcard-type](/img/unbounded-wildcard-type.png)
 
 ## PECS : Producer(생산자)-extends, Consumer(소비자)-super
 - Produce를 하면 상속을 받고, Comsume을 하면 상속을 한다는 법칙?
@@ -109,7 +109,7 @@ list.add(1234); // compile error !!
 - parameter type이 소비자 역할을 하면 <? super T> 와 같이 사용
 - Producer-extends는 READ만 가능
 - Consumer-super는 WRITE만 가능  
-  ![pecs-sample](./img/pecs-sample.png)
+  ![pecs-sample](/img/pecs-sample.png)
 
 </br>
 
@@ -154,7 +154,7 @@ class Pair<K, V> {
 - 제너릭이 도입되기 전의 소스코드와의 호환성을 유지하기 위해 Erasure가 존재
 - \<T extends Car\> 의 제너릭 타입은 컴파일시 Car로 치환 됨
 - \<T\> 의 제너릭 타입은 컴파일시 Object로 치환 됨  
-![erasure-ex01](./img/erasure-ex01.png)  
-![erasure-ex02](./img/erasure-ex02.png)  
+![erasure-ex01](/img/erasure-ex01.png)  
+![erasure-ex02](/img/erasure-ex02.png)  
 
 

@@ -41,9 +41,9 @@
 - valueOf()
   - 매개변수로 제공되는 String 값과 일치하는 enum 상수가 있는 경우 해당 객체를 반환
   - 일치하는 enum이 없는 경우 IllegalArgumentException 발생
-  ![enum-exception](./img/enum-exception.png)
+  ![enum-exception](/img/enum-exception.png)
   - 매개변수가 null인 경우 NullPointerException 발생  
-  ![enum-exception2](./img/enum-exception2.png)
+  ![enum-exception2](/img/enum-exception2.png)
 
 </br>
 

@@ -34,7 +34,7 @@ javac HelloWorld.java
 </br>  
 
 ### JVM 구성 요소
-![jvm structure](./img/jvm%20structure.jpeg)  
+![jvm structure](/img/jvm%20structure.jpeg)  
 출처 [https://medium.com/webeveloper/jvm-java-virtual-machine-architecture-94b914e93d86](https://medium.com/webeveloper/jvm-java-virtual-machine-architecture-94b914e93d86)
 
 - JVM은 크게 클래스로더, 데이터영역, 실행엔진, 네이티브영역으로 나뉘어짐
